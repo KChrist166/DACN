@@ -195,14 +195,14 @@ output_zip_path = os.path.join(output_directory, f"{current_time_before_executio
 shutil.make_archive(output_zip_path[:-4], 'zip', folder_to_compress)
 
 # Hiện thông báo
-print(f"{folder_to_compress} has already been zipped at the same directory\n")
-print(f"{folder_to_compress} will be deleted now")
+print(f"\n{folder_to_compress} has already been zipped at the same directory\n")
+print(f"{folder_to_compress} will be deleted now\n")
 
 # Xoá folder ảnh
 folder_to_delete = os.path.join(output_directory, current_time_before_execution)
 try:
     shutil.rmtree(folder_to_delete)
-    print(f"Folder '{folder_to_delete}' was deleted successfully.")
+    print(f"Folder '{folder_to_delete}' was deleted successfully.\n")
 except OSError as e:
         print(f"Error: {e}")
 
@@ -225,7 +225,7 @@ try:
     client.fput_object(
         bucket_satellite_img_name, zipped_bucket_object_name, local_zip_file_path
     )
-    print(f"Data is successfully uploaded as object data to bucket {bucket_satellite_img_name}."
+    print(f"Data is successfully uploaded as object data to bucket {bucket_satellite_img_name}.\n"
     )
 except S3Error as exc:
     print("error occurred.", exc)
@@ -233,7 +233,7 @@ except S3Error as exc:
 # Xoá file zip
 try:
     os.remove(output_zip_path)
-    print(f"File '{output_zip_path}' has been deleted successfully.")
+    print(f"File '{output_zip_path}' has been deleted successfully.\n")
 except OSError as e:
     print(f"Error: {e}")
 
@@ -285,7 +285,7 @@ output_file_name = os.path.join(output_csv_directory, f"{current_time_before_exe
     
 save_to_csv(output_file_name, weather_data_list)
 
-print(f"Data has been saved to {output_file_name}")
+print(f"Data has been saved to {output_file_name}\n")
     
 # Đọc file CSV vào DataFrame
 csv_file_path = os.path.join(output_csv_directory, f"{current_time_before_execution}.csv")
@@ -335,7 +335,7 @@ try:
     client.fput_object(
         csv_bucket_name, csv_bucket_object_name, csv_file_path
     )
-    print(f"Data is successfully uploaded as object data to bucket {csv_bucket_name}."
+    print(f"Data is successfully uploaded as object data to bucket {csv_bucket_name}.\n"
     )
 except S3Error as exc:
     print("error occurred.", exc)
@@ -343,6 +343,6 @@ except S3Error as exc:
 # Xoá file csv
 try:
     os.remove(csv_file_path)
-    print(f"File '{csv_file_path}' has been deleted successfully.")
+    print(f"File '{csv_file_path}' has been deleted successfully.\n")
 except OSError as e:
     print(f"Error: {e}")
