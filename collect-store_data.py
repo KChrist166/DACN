@@ -150,7 +150,6 @@ for province, bbox in province_bboxes.items():
 
     ListImg.append((province, request.get_data()[0]))
     
-
 # Lấy thời gian trước khi bắt đầu vòng lặp
 current_time_before_execution = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
