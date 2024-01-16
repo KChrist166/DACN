@@ -154,7 +154,7 @@ for province, bbox in province_bboxes.items():
 current_time_before_execution = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
 # Định nghĩa thư mục lưu trữ hình ảnh
-output_directory = '/usr/local/khanh/DACN/satelite_image_output_realtime'
+output_directory = '/usr/local/khanh/DACN/satellite_image_output_realtime'
 os.makedirs(output_directory, exist_ok=True)
 
 # Tạo một danh sách để lưu trữ thông tin về tất cả các ảnh
