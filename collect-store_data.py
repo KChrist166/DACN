@@ -10,8 +10,8 @@ import os
 import csv
 
 # Cài đặt cấu hình
-CLIENT_ID = "7b96af74-8c01-41fb-b0c0-7759db46dcf8"
-CLIENT_SECRET = "L8xDsH9gFc0JQk8SApWVW2PSObGecnpG"
+CLIENT_ID = "81ac3ff2-88d0-4963-b5ec-8bb0bbf5813a"
+CLIENT_SECRET = "He9xWWRipZXtnF4thXWSIQpJiYijBwJX"
 
 config = SHConfig()
 if CLIENT_ID and CLIENT_SECRET:
