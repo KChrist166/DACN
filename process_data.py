@@ -3,12 +3,13 @@ import os
 import numpy as np
 
 # Đường dẫn đến thư mục chứa các file
-csv_folder_path = "D:/UIT/KLTN/train_csv/"
-img_folder_path = "D:/UIT/KLTN/train_img/"
-rain_data_path = "D:/UIT/KLTN/data_rain.csv"
-image_data_path = "D:/UIT/KLTN/data_img.csv"
-final_data_path = "D:/UIT/KLTN/main_data.csv"
-threshold_size = 100 * 1024  # Ví dụ: 100KB
+csv_folder_path = "path/to/csv_folder/"
+img_folder_path = "path/to/image_folder/"
+rain_data_path = "path/to/rain_data_csv_file"
+image_data_path = "path/to/image_data_csv_file"
+final_data_path = "path/to/final_data_csv_file"
+# Lọc các ảnh không đạt chuẩn dựa trên dung lượng 
+threshold_size = 100 * 1024  # lọc ảnh < 100KB (ảnh < 100KB thường là ảnh trắng)
 
 def find_img_folder_matched(csv_name):
     for img_folder in os.listdir(img_folder_path):
